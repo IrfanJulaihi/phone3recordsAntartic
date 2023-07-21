@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ref_rumahs",
+  "info": {
+    "singularName": "ref-rumah",
+    "pluralName": "ref-rumahs",
+    "displayName": "RefRumah",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nama": {
+      "type": "string"
+    }
+  }
+}

@@ -18,11 +18,18 @@
     "phoneNumber": {
       "type": "string"
     },
-    "unit": {
-      "type": "string"
-    },
     "emel": {
       "type": "email"
+    },
+    "ref_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ref-unit.ref-unit"
+    },
+    "ref_rumah": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ref-rumah.ref-rumah"
     }
   }
 }
