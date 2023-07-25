@@ -1,5 +1,5 @@
 {
-  "/contacts": {
+  "/personels": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactListResponse"
+                "$ref": "#/components/schemas/PersonelListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Contact"
+        "Personel"
       ],
       "parameters": [
         {
@@ -169,7 +169,7 @@
           }
         }
       ],
-      "operationId": "get/contacts"
+      "operationId": "get/personels"
     },
     "post": {
       "responses": {
@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactResponse"
+                "$ref": "#/components/schemas/PersonelResponse"
               }
             }
           }
@@ -235,23 +235,23 @@
         }
       },
       "tags": [
-        "Contact"
+        "Personel"
       ],
       "parameters": [],
-      "operationId": "post/contacts",
+      "operationId": "post/personels",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ContactRequest"
+              "$ref": "#/components/schemas/PersonelRequest"
             }
           }
         }
       }
     }
   },
-  "/contacts/{id}": {
+  "/personels/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -259,7 +259,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactResponse"
+                "$ref": "#/components/schemas/PersonelResponse"
               }
             }
           }
@@ -316,7 +316,7 @@
         }
       },
       "tags": [
-        "Contact"
+        "Personel"
       ],
       "parameters": [
         {
@@ -330,7 +330,7 @@
           }
         }
       ],
-      "operationId": "get/contacts/{id}"
+      "operationId": "get/personels/{id}"
     },
     "put": {
       "responses": {
@@ -339,7 +339,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ContactResponse"
+                "$ref": "#/components/schemas/PersonelResponse"
               }
             }
           }
@@ -396,7 +396,7 @@
         }
       },
       "tags": [
-        "Contact"
+        "Personel"
       ],
       "parameters": [
         {
@@ -410,13 +410,13 @@
           }
         }
       ],
-      "operationId": "put/contacts/{id}",
+      "operationId": "put/personels/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/ContactRequest"
+              "$ref": "#/components/schemas/PersonelRequest"
             }
           }
         }
@@ -487,7 +487,7 @@
         }
       },
       "tags": [
-        "Contact"
+        "Personel"
       ],
       "parameters": [
         {
@@ -501,7 +501,99 @@
           }
         }
       ],
-      "operationId": "delete/contacts/{id}"
+      "operationId": "delete/personels/{id}"
+    }
+  },
+  "/personels/{id}/localizations": {
+    "post": {
+      "responses": {
+        "200": {
+          "description": "OK",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PersonelLocalizationResponse"
+              }
+            }
+          }
+        },
+        "400": {
+          "description": "Bad Request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "401": {
+          "description": "Unauthorized",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "403": {
+          "description": "Forbidden",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Not Found",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "500": {
+          "description": "Internal Server Error",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      },
+      "tags": [
+        "Personel"
+      ],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "description": "",
+          "deprecated": false,
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "operationId": "post/personels/{id}/localizations",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PersonelLocalizationRequest"
+            }
+          }
+        }
+      }
     }
   }
 }
